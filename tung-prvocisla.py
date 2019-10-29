@@ -1,20 +1,18 @@
 import math
-nPuvodni =4352
+nPuvodni =12687862
 
 n = nPuvodni
-nD = n/2
+nD = math.sqrt(n)
 nDown = math.floor(nD)
-garbage = []
-print("odmocnina:")
-print (nDown)
+garbage = [2]
 
-listPossible = [2,3,5,7]
-for i in range(2, nDown):
+listPossible = []
+for i in range(3, nDown,2):
     listPossible.append(i)
 
-del listPossible[0::2]
+#del listPossible[0::2]
 # slice sequence[start:stop:step] = even numbers
-print("nezbavene 2: ")
+print("listPossible")
 print(listPossible)
 
 for i in listPossible:
@@ -50,19 +48,17 @@ for i in prvocisla:
         delitele1.append(i)
 
 
-print("delitele1")
-
-print(delitele1)
-
-print("delitele2")
-
-print(delitele2)
+delitele = delitele1
+delitele.append(delitele2[-1])
+print(delitele)
 
 nKontrola = 1
 
-for i in delitele1:
+for i in delitele:
     nKontrola = nKontrola * i
+
 print(nKontrola)
 print (nPuvodni)
+
 
 
